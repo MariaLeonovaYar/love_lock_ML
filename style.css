@@ -1,4 +1,86 @@
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
 body{
-    background: url(most.jpg);
+    background: url(./content/most.jpg);
     background-size: cover;
+}
+
+/*Прямоугольник*/
+.rect {
+    margin-top: -50px;
+    padding: 0;
+    height: 95vh;
+    width: 70vw;
+    background-color: #fff;
+    border-radius: 0px 0px 40px 0px;
+  }
+
+/*Подключаем шрифты*/
+@font-face {
+    font-family: 'allneed';
+    src: url(./content/allneed2.ttf);
+}
+@font-face {
+    font-family: 'text';
+    src: url(./content/text.ttf);
+}
+
+p {
+    font-family: 'allneed';
+}
+
+a{
+    font-family: 'text';
+}
+
+.l-Title{
+    font-size: 40px;
+    margin-top: 0px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+.l-Text{
+    font-size: 15px;
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+.llock{
+    font-size: 30px;
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    color: #ff6969;
+    font-family: "allneed";
+}
+
+/*Таблица*/
+.tbl{
+    margin-top: 50px;
+    width: 70vw;
+    border-spacing: 60px 0px;
+}
+
+/*Кнопка*/
+.button1{
+    background-color: #ff6969; /* Green */
+    border: none;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 40px;
+    margin-top: 50px;
+    border-radius: 15px;
 }

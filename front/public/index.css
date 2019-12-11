@@ -1,46 +1,56 @@
 body, html{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 body{
-    background: url(./content/most.jpg);
+    background-image: url(./img/most.jpg);
     background-size: cover;
 }
 
+
 /*Прямоугольник*/
 .rect {
-    margin-top: -50px;
-    padding: 0;
-    height: 95vh;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
     width: 70vw;
-    background-color: #fff;
-    border-radius: 0px 0px 40px 0px;
+    background-color: #faf8f2;
+    border-radius: 0px 0px 80px 0px;
   }
 
 /*Подключаем шрифты*/
 @font-face {
     font-family: 'allneed';
-    src: url(./content/allneed2.ttf);
+    src: url(./fonts/allneed2.ttf);
 }
 @font-face {
     font-family: 'text';
-    src: url(./content/text.ttf);
+    src: url(./fonts/text.ttf);
 }
 
 p {
     font-family: 'allneed';
+    margin-top: 0px;
 }
 
 a{
     font-family: 'text';
+    text-decoration: none;
 }
+
+a:-webkit-any-link {
+    color: #1B1C20;
+    cursor: pointer;
+}
+
 
 .l-Title{
     font-size: 40px;
-    margin-top: 0px;
+    margin-top: 50px;
     padding-top: 0px;
     text-align: center;
+    color: #1B1C20;
 }
 
 .l-Text{
@@ -49,25 +59,38 @@ a{
     padding-left: 20px;
     margin-right: 20px;
     padding-right: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+    color: #1B1C20;
 }
 
 .llock{
     font-size: 30px;
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 0px;
+    padding-top: 0px;
     margin-left: 20px;
     padding-left: 20px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
     color: #ff6969;
     font-family: "allneed";
 }
 
+.menu{
+    font-size: 15px;
+    font-family: "allneed";
+    list-style: none;
+    margin-top: -60px;
+    margin-right: 20px;
+    padding-right: 20px;
+    text-align: right;
+    color: #1B1C20;
+}
+
 /*Таблица*/
 .tbl{
-    margin-top: 50px;
+    margin-top: 70px;
     width: 70vw;
     border-spacing: 60px 0px;
+    text-align: center;
 }
 
 /*Кнопка*/
@@ -81,6 +104,6 @@ a{
     display: inline-block;
     font-size: 16px;
     margin-left: 40px;
-    margin-top: 50px;
+    margin-top: 70px;
     border-radius: 15px;
 }

@@ -4,7 +4,7 @@ body, html{
 }
 
 body{
-    background-image: url(./img/most.jpg);
+    background-image: url(./img/мостик.png);
     background-size: cover;
 }
 
@@ -66,7 +66,7 @@ a:-webkit-any-link {
 }
 
 /*Лого*/
-.llock{
+h2{
     font-size: 30px;
     margin-top: 0px;
     padding-top: 0px;
@@ -116,7 +116,7 @@ td{
 }
 
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 780px){
     /*Прямоугольник*/
     .rect {
         width: 95vw;

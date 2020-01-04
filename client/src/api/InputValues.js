@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const sendInputValue = (name, surname, email, password) => {
+export const sendInputValue = (name, surname, username, password) => {
     const payload = {
         name: name,
         surname: surname,
-        email: email,
+        username: username,
         password: password
     };
     return axios

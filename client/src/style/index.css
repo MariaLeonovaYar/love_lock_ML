@@ -13,11 +13,28 @@ body{
 .rect {
     margin: 0px;
     padding: 0px;
-    height: 100vh;
+    margin-top: -50px;
+    height: 90vh;
     width: 75vw;
-    background-color: #faf8f2;
     border-radius: 0px 0px 80px 0px;
+    background-color: rgba(250, 248, 242, 0.9);
   }
+
+table{
+    text-align: center;
+    width: 70vw;
+}
+
+td{
+    width: 10vw;
+}
+
+.image {
+    margin-top: 30px;
+    padding: 0;
+    width: 5vw;
+    border-spacing: 30px;
+}
 
 /*Подключаем шрифты*/
 @font-face {
@@ -69,9 +86,9 @@ a:-webkit-any-link {
 h2{
     font-size: 30px;
     margin-top: 0px;
-    padding-top: 0px;
-    margin-left: 20px;
-    padding-left: 20px;
+    padding-top: 35px;
+    margin-left: 10px;
+    padding-left: 15px;
     color: #ff6969;
     font-family: "allneed";
 }
@@ -88,17 +105,6 @@ h2{
     color: #1B1C20;
 }
 
-/*Таблица*/
-.tbl{
-    margin-top: 70px;
-    width: 70vw;
-    border-spacing: 60px 0px;
-    text-align: center;
-}
-
-td{
-    width: 30vw;
-}
 
 /*Кнопка*/
 .button1{
@@ -111,15 +117,29 @@ td{
     display: inline-block;
     font-size: 16px;
     margin-left: 40px;
-    margin-top: 70px;
+    margin-top: 50px;
     border-radius: 15px;
+    outline: none;
+}
+
+.button1:hover{
+    background: linear-gradient(#ff6969, #e73939) #ff6969;
+}
+
+.button1:active{
+    background: linear-gradient(#ff6969, #e73939) #ff6969;
 }
 
 
 @media screen and (max-width: 767px){
     /*Прямоугольник*/
     .rect {
+        margin-top: -76px;
         width: 95vw;
+    }
+    .rect2 {
+        margin-top: -76px;
+        width: 200vw;
     }
     /*Лого*/
     h2{
@@ -146,23 +166,30 @@ td{
         margin-top: 0px;
         padding-top: 0px;
     }
-    /*Таблица*/
-    .tbl{
-        margin-top: 50px;
-        width: 95vw;
-        border-spacing: 20px 0px;
+
+    table{
+        text-align: center;
+        width: 90vw;
     }
+    
+    .image {
+        margin-top: 30px;
+        padding: 0;
+        width: 10vw;
+    }
+
     /*Кнопка*/
     .button1{
         margin-left: 25%;
         margin-right: 25%;
-        margin-top: 40px;
+        margin-top: 20px;
     }
 }
 
 @media screen and (max-width: 350px){
     /*Прямоугольник*/
     .rect {
+        margin-top: -76px;
         width: 95vw;
     }
     /*Лого*/
@@ -180,6 +207,17 @@ td{
         padding-right: 10px;
     }
 
+    table{
+        text-align: center;
+        width: 95vw;
+    }
+    
+    .image {
+        margin-top: 30px;
+        padding: 0;
+        width: 10vw;
+    }
+
     /*Заголовок*/
     .l-Title{
         font-size: 30px;
@@ -192,12 +230,7 @@ td{
         margin-top: 0px;
         padding-top: 0px;
     }
-    /*Таблица*/
-    .tbl{
-        margin-top: 20px;
-        width: 90vw;
-        border-spacing: 20px 0px;
-    }
+
     /*Кнопка*/
     .button1{
         margin-left: 25%;
@@ -205,3 +238,28 @@ td{
         margin-top: 10px;
     }
 }
+.button2{
+    background-color: #ff6969;
+    border: none;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 0px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.answer_container{
+    margin: 0px;
+    padding: 0px;
+    margin-top: -50px;
+    height: 160vh;
+    width: 75vw;
+    border-radius: 0px 0px 80px 0px;
+    background-color: rgba(250, 248, 242, 0.9);
+}
+
+

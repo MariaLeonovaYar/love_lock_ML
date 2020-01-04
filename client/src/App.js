@@ -3,33 +3,32 @@ import Navigation from './components/Navigation';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Auth from './components/Auth';
 import Register from './components/Register';
-import Page from './components/Page';
+import Start from './components/Start';
+import Lock from './components/Lock';
+import LockList from './components/LockList';
+import Success from './components/Success';
+import LockContent from './components/LockContent';
 import './style/css/bootstrap.min.css';
-import {sendInputValue} from "./api/InputValues";
 
 
 class App extends Component {
 
     constructor(props) {
         super(props);
-    }
-
-    clickHandler() {
-        const name = document.getElementById("name").value;
-        const surname = document.getElementById("surname").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        sendInputValue(name, surname, email, password);
+        this.state = {
+          isLoggedIn: props.isLoggedIn
+        };
     }
 
     render() {
         return (    
           <BrowserRouter>
             <div>
-              <Navigation />
+              <Navigation isLoggedIn = {this.state.isLoggedIn}/>
                 <Switch>
                 <Route
                     path='/'
+                    component={Start}
                     exact
                   />
                   <Route
@@ -43,8 +42,25 @@ class App extends Component {
                     exact
                   />
                   <Route
-                    path='/Page'
-                    component={Page}
+                    path='/Start'
+                    component={Start}
+                  />
+                  <Route
+                    path='/LockList'
+                    component={LockList}
+                  />
+                  <Route
+                    path='/Lock'
+                    component={Lock}
+                  />
+                  <Route
+                    path='/Success'
+                    component={Success}
+                    exact
+                  />
+                  <Route
+                  path='/LockContent'
+                  component={LockContent}
                   />
                 </Switch>
             </div>
@@ -55,3 +71,4 @@ class App extends Component {
 }
 
 export default App;
+

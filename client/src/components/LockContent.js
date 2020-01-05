@@ -34,7 +34,7 @@ class LockContent extends Component {
             <div className="card" style={{width: '24rem' }}>
                 <div className="form-group">
                   {cardContent}
-                  <button type="submit" class="btn btn-danger" onClick={this.clickHandler}>fkj</button>
+                  <button type="submit" class="btn btn-danger" onClick={this.clickHandler}>Удалить</button>
                 </div>
             </div>
     );

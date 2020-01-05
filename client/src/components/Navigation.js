@@ -21,7 +21,7 @@ function UserMenu() {
         <a class="navbar-brand" href="/Start">Домашняя страница |</a>
         <a class="navbar-brand" href="/Lock">Повесить замочек на мост|</a>
         <a class="navbar-brand" href="/LockList">Список твоих замочков</a>
-        <a class="navbar-brand" href="/LockContent">ЛокКонтент</a>
+        
 
       </div>
     </nav>
@@ -37,7 +37,7 @@ function GuestMenu() {
         <a class="navbar-brand" href="/Start">Домашняя страница |</a>
         <a class="navbar-brand" href="/Lock">Повесить замочек на мост|</a>
         <a class="navbar-brand" href="/LockList">Список твоих замочков</a>
-        <a class="navbar-brand" href="/LockContent">ЛокКонтент</a>
+       
 
       </div>
     </nav>

@@ -14,7 +14,6 @@ db = cluster['love_lock']
 values_collection = db['authorisation']
 lock_collection = db['lock']
 
-
 def get_data_as_response_object(username):
     response_object = {}
     results = values_collection.find({'username': username})
@@ -47,13 +46,14 @@ def add_input_value_into_db():
         design = request_data.get('design')
         size = request_data.get('size')
         message = request_data.get('message')
-        lock_collection.insert_one({"username": username, "person" : person, "design": design, "size": size, "message": message})
+        lock_collection.insert_one({"_id": lock_collection.count_documents({})+1, "username": username, "person" : person, "design": design, "size": size, "message": message})
         return jsonify({})
 
 
 @app.route('/api/delete_lock_id', methods=['POST'])
 def delete_lock_id():
     if request.method == 'POST':
+        
         lock_collection.delete_one({'person': '34'})
         return jsonify({})
 

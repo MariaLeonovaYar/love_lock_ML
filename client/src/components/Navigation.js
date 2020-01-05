@@ -37,8 +37,6 @@ function GuestMenu() {
         <a class="navbar-brand" href="/Start">Домашняя страница |</a>
         <a class="navbar-brand" href="/Lock">Повесить замочек на мост|</a>
         <a class="navbar-brand" href="/LockList">Список твоих замочков</a>
-       
-
       </div>
     </nav>
   )

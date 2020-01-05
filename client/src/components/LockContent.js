@@ -8,10 +8,10 @@ class LockContent extends Component {
 
   constructor(props) {
     super(props);
-    this.state.size = props.size;
+    this.state.size = "Размер замка";
     this.state.color = "Цвет замка ";
     this.state.name = "С кем повесили замочек ";
-    this.state.text = "Сообщение ";
+    this.state.message = "Сообщение:";
   }
 
   clickHandler(){
@@ -21,12 +21,10 @@ class LockContent extends Component {
   }
 
   render() {
+    
     let cardContent = (
         <div id="l-Text" class="l-Text">
             <p>{this.state.size}</p>
-            <p>{this.state.color}</p>
-            <p>{this.state.name}</p>
-            <p>{this.state.text}</p>
       </div>
     );
 

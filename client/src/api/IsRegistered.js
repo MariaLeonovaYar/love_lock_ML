@@ -14,8 +14,7 @@ export const isRegistered = (username) => {
                 userData[i] = new Array(1);
                 userData[i][0] = res.data.data[i]["username"];
             }
-
-            return userData;
+            return length;
             }
         ).catch((error) => {
             console.log(error);

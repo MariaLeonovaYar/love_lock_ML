@@ -16,13 +16,14 @@ lock_collection = db['lock']
 
 def get_data_as_response_object(username):
     response_object = {}
-    results = values_collection.find({'username': username})
+    results = lock_collection.find({'username': username})
     arr = []
     for el in results:
-        arr.append({'username': str(el['username'])})
+        arr.append({'_id': str(el['_id']), 'username': str(el['username']), 'size': str(el['size']), 'design': str(el['design']), 'person': str(el['person']), 'message': str(el['message'])})
     response_object['data'] = arr
     return response_object
 
+#проверка (есть ли такой пользователь)
 @app.route('/api/is_registered', methods=['GET'])
 def is_registered():
     if request.method == 'GET':
@@ -30,6 +31,7 @@ def is_registered():
         response_object = get_data_as_response_object(username)
         return jsonify(response_object)
 
+#получение всех замков пользователя
 @app.route('/api/get_user_data', methods=['GET'])
 def get_user_data():
     if request.method == 'GET':
@@ -37,6 +39,7 @@ def get_user_data():
         response_object = get_data_as_response_object(username)
         return jsonify(response_object)
 
+#регистрация пользователя
 @app.route('/api/send_lock_data', methods=['POST'])
 def add_input_value_into_db():
     if request.method == 'POST':
@@ -49,15 +52,15 @@ def add_input_value_into_db():
         lock_collection.insert_one({"_id": lock_collection.count_documents({}), "username": username, "person" : person, "design": design, "size": size, "message": message})
         return jsonify({})
 
-
+#удаление замка по айди
 @app.route('/api/delete_lock_id', methods=['POST'])
-def delete_lock_id():
+def delete_lock():
     if request.method == 'POST':
-        
-        lock_collection.delete_one({'person': '34'})
+        id_lock = request.get_json().get('id_lock')
+        lock_collection.delete_one({'_id': id_lock})
         return jsonify({})
 
-
+#добавление нового замка
 @app.route('/api/send', methods=['POST'])
 def add_input_register_into_db():
     if request.method == 'POST':

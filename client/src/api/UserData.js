@@ -7,17 +7,19 @@ export const getUserData = (username) => {
         })
         .then(res => { 
                 let length = res.data.data.length;
-                console.log(String(length))
-                console.log(String(res.data.data[0]["size"]))
+               
+                
                 let userData = new Array(length);
                 for (let i = 0; i < length; i++) {
-                    userData[i] = new Array(4);
-                    userData[i][0] = res.data.data[i]["size"];
+                    userData[i] = new Array(6);
+                    userData[i][0] = res.data.data[i]["username"];
                     userData[i][1] = res.data.data[i]["design"];
                     userData[i][2] = res.data.data[i]["person"];
                     userData[i][3] = res.data.data[i]["message"];
+                    userData[i][4] = res.data.data[i]["size"];
+                    userData[i][5] = res.data.data[i]["_id"]
                 }
-                return userData;
+                return userData[0];
             }
         ).catch((error) => {
             console.log(error);

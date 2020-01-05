@@ -46,7 +46,7 @@ def add_input_value_into_db():
         design = request_data.get('design')
         size = request_data.get('size')
         message = request_data.get('message')
-        lock_collection.insert_one({"_id": lock_collection.count_documents({})+1, "username": username, "person" : person, "design": design, "size": size, "message": message})
+        lock_collection.insert_one({"_id": lock_collection.count_documents({}), "username": username, "person" : person, "design": design, "size": size, "message": message})
         return jsonify({})
 
 
@@ -58,16 +58,16 @@ def delete_lock_id():
         return jsonify({})
 
 
-# @app.route('/api/send', methods=['POST'])
-# def add_input_value_into_db():
-#     if request.method == 'POST':
-#         request_data = request.get_json()
-#         name = request_data.get('name')
-#         surname = request_data.get('surname')
-#         username = request_data.get('username')
-#         password = request_data.get('password')
-#         values_collection.insert_one({"name" : name, "surname": surname, "username": username, "password": password})
-#         return jsonify({})
+@app.route('/api/send', methods=['POST'])
+def add_input_register_into_db():
+    if request.method == 'POST':
+        request_data = request.get_json()
+        name = request_data.get('name')
+        surname = request_data.get('surname')
+        username = request_data.get('username')
+        password = request_data.get('password')
+        values_collection.insert_one({"_id": values_collection.count_documents({}), "name" : name, "surname": surname, "username": username, "password": password})
+        return jsonify({})
 
 if __name__ == '__main__':
     app.run()

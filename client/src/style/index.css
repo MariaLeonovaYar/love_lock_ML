@@ -11,12 +11,13 @@ body{
 
 /*Прямоугольник*/
 .rect {
-    margin: 0px;
+	margin-left: -50px;
+    margin: 200px;
     padding: 0px;
-    margin-top: -50px;
-    height: 90vh;
+    margin-top: 50px;
+    height: 80vh;
     width: 75vw;
-    border-radius: 0px 0px 80px 0px;
+    border-radius: 80px 80px 80px 80px;
     background-color: rgba(250, 248, 242, 0.9);
   }
 

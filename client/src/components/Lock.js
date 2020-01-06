@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../style/auth.css';
+import '../style/index.css';
 import {sendLockData} from "../api/SendLockData";
 
 
@@ -22,7 +23,7 @@ class Lock extends Component {
     }
     render() {
         return (
-            
+       
             <div className="answer_container">
                 <div class="l-Title">
                     <p>Выбери дизайн замочка</p>
@@ -94,17 +95,23 @@ class Lock extends Component {
                     <p>Введи имя человека, вместе с которым вы хотите повесить замочек</p>
                 </div>
                 <p>
+                    <div class="el_center">
                 <input type="text" class="form-control" id="person"></input>
+                </div>
                 </p>
                 <div class="l-Title">
                     <p>Оставь сообщение</p>
                 </div>
                 <p>
+                <div class="el_center">
                 <input type="text" class="form-control" id="message"></input>
+                </div>
                 </p>
+                <div class="design_lock">
                 <button class="button2" onClick={this.clickHandler}>Повесить на мост</button>
+                </div>
             </div>
-            
+        
         );
     }    
 

@@ -39,7 +39,7 @@ def get_user_data():
         response_object = get_data_as_response_object(username)
         return jsonify(response_object)
 
-#регистрация пользователя
+#новый замок
 @app.route('/api/send_lock_data', methods=['POST'])
 def add_input_value_into_db():
     if request.method == 'POST':
@@ -49,8 +49,11 @@ def add_input_value_into_db():
         design = request_data.get('design')
         size = request_data.get('size')
         message = request_data.get('message')
-        ID = lock_collection.find().distinct('_id')
-        lock_collection.insert_one({"_id": max(ID) + 1, "username": username, "person" : person, "design": design, "size": size, "message": message})
+        if (lock_collection.find().distinct('_id')):
+            ID = max(lock_collection.find().distinct('_id'))+1
+        else:
+            ID = 0
+        lock_collection.insert_one({"_id": ID, "username": username, "person" : person, "design": design, "size": size, "message": message})
         return jsonify({})
 
 #удаление замка по айди
@@ -61,7 +64,7 @@ def delete_lock():
         lock_collection.delete_one({'_id': id_lock})
         return jsonify({})
 
-#добавление нового замка
+#регистрация
 @app.route('/api/send', methods=['POST'])
 def add_input_register_into_db():
     if request.method == 'POST':
@@ -70,8 +73,11 @@ def add_input_register_into_db():
         surname = request_data.get('surname')
         username = request_data.get('username')
         password = request_data.get('password')
-        ID = values_collection.find().distinct('_id')
-        values_collection.insert_one({"_id": max(ID)+1, "name" : name, "surname": surname, "username": username, "password": password})
+         if (values_collection.find().distinct('_id')):
+            ID = max(values_collection.find().distinct('_id'))+1
+        else:
+            ID = 0
+        values_collection.insert_one({"_id": ID, "name" : name, "surname": surname, "username": username, "password": password})
         return jsonify({})
 
 if __name__ == '__main__':

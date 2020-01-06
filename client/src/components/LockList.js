@@ -24,10 +24,12 @@ class LockList extends Component {
         
     };
 
-    clickDeleteHandler(){
-        console.log("Запрос на удаление данных..");
-        delete_lock_id(Number(ID));
-    }
+    clickDeleteHandler = () => {
+        console.log("Запрос на удаление данных..");   
+        delete_lock_id(Number(ID)).then((data) => {
+            this.setState({'data': data});
+        });
+    };
 
     render() {   
       let cardContent = ( 

@@ -49,6 +49,7 @@ def add_input_value_into_db():
         design = request_data.get('design')
         size = request_data.get('size')
         message = request_data.get('message')
+
         if (lock_collection.find().distinct('_id')):
             ID = max(lock_collection.find().distinct('_id'))+1
         else:
@@ -73,7 +74,7 @@ def add_input_register_into_db():
         surname = request_data.get('surname')
         username = request_data.get('username')
         password = request_data.get('password')
-         if (values_collection.find().distinct('_id')):
+        if (values_collection.find().distinct('_id')):
             ID = max(values_collection.find().distinct('_id'))+1
         else:
             ID = 0

@@ -49,7 +49,8 @@ def add_input_value_into_db():
         design = request_data.get('design')
         size = request_data.get('size')
         message = request_data.get('message')
-        lock_collection.insert_one({"_id": lock_collection.count_documents({}), "username": username, "person" : person, "design": design, "size": size, "message": message})
+        ID = lock_collection.find().distinct('_id')
+        lock_collection.insert_one({"_id": max(ID) + 1, "username": username, "person" : person, "design": design, "size": size, "message": message})
         return jsonify({})
 
 #удаление замка по айди
@@ -69,7 +70,8 @@ def add_input_register_into_db():
         surname = request_data.get('surname')
         username = request_data.get('username')
         password = request_data.get('password')
-        values_collection.insert_one({"_id": values_collection.count_documents({}), "name" : name, "surname": surname, "username": username, "password": password})
+        ID = values_collection.find().distinct('_id')
+        values_collection.insert_one({"_id": max(ID)+1, "name" : name, "surname": surname, "username": username, "password": password})
         return jsonify({})
 
 if __name__ == '__main__':

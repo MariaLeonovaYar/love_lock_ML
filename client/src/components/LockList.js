@@ -49,7 +49,6 @@ class LockList extends Component {
                         <p>Человек: {this.state.data[2]}</p>
                         <p>Сообщение: {this.state.data[3]}</p>
                         <p>Размер: {this.state.data[4]}</p>
-                        <p>Индекс: {this.state.data[5]}</p>
                   </div>
                 );
             }
@@ -62,7 +61,6 @@ class LockList extends Component {
                         <p>Человек: {this.state.data[2]}</p>
                         <p>Сообщение: {this.state.data[3]}</p>
                         <p>Размер: {this.state.data[4]}</p>
-                        <p>Индекс: {this.state.data[5]}</p>
                   </div>
                 );
             }
@@ -75,7 +73,6 @@ class LockList extends Component {
                         <p>Человек: {this.state.data[2]}</p>
                         <p>Сообщение: {this.state.data[3]}</p>
                         <p>Размер: {this.state.data[4]}</p>
-                        <p>Индекс: {this.state.data[5]}</p>
                   </div>
                 );
             }

@@ -19,6 +19,7 @@ export const getUserData = (username) => {
                     userData[i][4] = res.data.data[i]["size"];
                     userData[i][5] = res.data.data[i]["_id"]
                 }
+                console.log(userData[0])
                 return userData[0];
             }
         ).catch((error) => {
